@@ -44,7 +44,7 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
       <main 
         className="question"
         data-aos="fade-down"
-          data-aos-duration="1000"
+        data-aos-duration="1000"
       >
       {question.img && (
         <img 

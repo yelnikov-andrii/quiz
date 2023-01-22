@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import { Container } from 'react-bootstrap';
 import './App.scss';
@@ -15,6 +16,7 @@ function App() {
   const [correctAnswers, setCorrectAnswers] = React.useState(0);
   const [finish, setFinish] = React.useState(false);
   const [delay, setDelay] = React.useState(false);
+  const [prestart, setPrestart] = React.useState(false);
 
   React.useEffect(() => {
     Aos.init({
@@ -38,7 +40,10 @@ function App() {
   }, [currentNum])
 
   const startTheQuiz = () => {
-    setStart(true);
+    setPrestart(true);
+    setTimeout(() => {
+      setStart(true);
+    }, 1000);
   }
 
   React.useEffect(() => {
@@ -53,7 +58,10 @@ function App() {
         {delay === false && (
           <div className='App__wrapper'>
           {!start && (
-            <Start startTheQuiz={startTheQuiz} />
+            <Start 
+              startTheQuiz={startTheQuiz} 
+              prestart={prestart}
+            />
           )}
           {start === true && (
             <>

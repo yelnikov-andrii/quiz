@@ -1,10 +1,12 @@
 import React from 'react';
 import classNames from 'classnames';
 import { MyButton } from '../MyButton/MyButton';
+import { Error } from '../Error/Error';
 
 export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
   const [answer, setAnswer] = React.useState<string>();
   const [answered, setAnswered] = React.useState(false);
+  const [error, setError] = React.useState(false);
 
   const clearInfo = () => {
     setAnswer('');
@@ -15,14 +17,21 @@ export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
     if (answered === false) {
       setAnswer(value);
       setAnswered(true);
+      setError(false);
     }
   }
 
   const goForward = () => {
     if (answered === true) {
-      nextQuestion();
-      clearInfo();
+      if (answer === question.answer) {
+        nextQuestion(true);
+      } else {
+        nextQuestion(false);
       }
+      clearInfo();
+    } else {
+      setError(true);
+    }
   }
 
   return (
@@ -57,13 +66,13 @@ export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
             className={classNames("myButton myButton--answer myButton--detailedQuestion", {
               'myButton--correctAnswer': answered === true && variant === question.answer,
               'myButton--falseAnswer': answered === true && variant !== question.answer && variant === answer,
-              'myButton--correctAnswerWasDone': answered === true && variant !== question.answer
+              'myButton--correctAnswerWasDone': answered === true && answer !== variant
             })}
             key={variant}
             click={() => {
               answerTheQuestion(variant);
             }}
-
+            error={error}
           />
         ))}
         </div>
@@ -86,6 +95,9 @@ export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
           </div>
           </div>
         )}
+        {error && (
+          <Error />
+         )}
         <MyButton
           content="Next"
           className="myButton myButton--scale myButton--next"

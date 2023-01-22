@@ -20,7 +20,7 @@ export const Finish: React.FC <any> = ({score, countOfQuestions}) => {
       <h1 className='finish__h2'>
         Here is your link to the discounted product:
       </h1>
-      <a className='finish__link' href="google.com">
+      <a className='finish__link' href='/'>
         Proceed to checkout
       </a>
       <h3 className='finish__h3'>

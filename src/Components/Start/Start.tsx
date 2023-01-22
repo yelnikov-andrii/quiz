@@ -1,7 +1,8 @@
 import React from 'react';
+import classNames from 'classnames';
 import { MyButton } from '../MyButton/MyButton';
 
-export const Start: React.FC <any> = ({startTheQuiz}) => {
+export const Start: React.FC <any> = ({startTheQuiz, prestart}) => {
 
   return (
     <div>
@@ -14,7 +15,9 @@ export const Start: React.FC <any> = ({startTheQuiz}) => {
       </h2>
       <MyButton 
         content="Give some correct answers for a chance to buy for $69.99" 
-        className="myButton"
+        className={classNames("myButton", {
+          'myButton--prestart': prestart === true,
+        })}
         click={startTheQuiz}
       />
       <MyButton 

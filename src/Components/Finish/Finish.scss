@@ -1,0 +1,59 @@
+.finish {
+  &__img {
+    margin-bottom: 20px;
+  }
+
+  &__h2 {
+    font-size: 26px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 50px 0;
+  }
+
+  &__results {
+    color: #4cb968;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 50px 0;
+  }
+
+  &__link {
+    color: rgb(255, 255, 255);
+    background-color: rgb(222, 66, 38);
+    font-size: 22px;
+    border-radius: 7px;
+    border-width: 1px;
+    border-color: rgb(255, 255, 255);
+    border-style: solid;
+    box-shadow: rgb(0 0 0 / 25%) 0px 2px 4px 0px;
+    text-align: center;
+    display: block;
+    word-wrap: break-word;
+    box-sizing: content-box;
+    line-height: normal;
+    max-width: 370px;
+    min-width: 76px;
+    padding: .95em 40px;
+    transition: transform .6s ease-out,opacity .6s ease-out,visibility .6s ease-out,background-color .6s ease-out,border-color .6s ease-out,color .6s ease-out,padding .6s ease-out,box-shadow .6s ease-in-out;
+    white-space: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 auto 40px;
+
+    &:hover {
+      color: #fff;
+      padding-left: 52px;
+      padding-right: 52px;
+    }
+  }
+
+  &__h3 {
+    font-size: 24px;
+    color: #ff0000;
+  }
+}
+
+.counter {
+  color: #ff0000;
+}

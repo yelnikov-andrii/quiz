@@ -1,0 +1,37 @@
+@import "~bootstrap/scss/bootstrap";
+@import './Components/MyButton/MyButton.scss';
+@import './Components/Question/Question.scss';
+@import './Components/DetailedQuestion/DetailedQuestion.scss';
+@import './Components/Error/Error.scss';
+@import './Components//Finish/Finish.scss';
+
+body {
+  background-color: #FAC865;
+}
+
+.App {
+  padding: 50px 0;
+  max-width: 800px;
+  margin: 0 auto;
+
+  &__wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  &__logo {
+    width: 150px;
+    margin: 0 0 70px 0;
+  }
+
+  &__header {
+    text-align: center;
+    margin: 0 0 30px 0;
+  }
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

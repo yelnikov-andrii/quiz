@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { MyButton } from '../MyButton/MyButton';
 import { Error } from '../Error/Error';
+import { Logo } from '../Logo/Logo';
 
 export const Question: React.FC <any> = ({question, nextQuestion}) => {
   const [answer, setAnswer] = React.useState<boolean | null>();
@@ -37,10 +38,7 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
   return (
     <React.Fragment>
       <>
-        <img 
-          src="https://involve-me.imgix.net/uploads/assets/93744c2c-4e46-439c-bf51-17ac52607418.png?q=55&dpr=1.25&w=600&fit=max" alt=''
-          className='App__logo'
-        />
+      <Logo />
       <main 
         className="question"
         data-aos="fade-down"

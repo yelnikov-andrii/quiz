@@ -18,6 +18,8 @@ function App() {
   const [finish, setFinish] = React.useState(false);
   const [delay, setDelay] = React.useState(false);
   const [prestart, setPrestart] = React.useState(false);
+  const searchParams = new URLSearchParams(window.location.search);
+  const arrOfFields = searchParams.toString().split('&').map(el => el.split('='));
 
   React.useEffect(() => {
     Aos.init({
@@ -62,6 +64,7 @@ function App() {
             <Start 
               startTheQuiz={startTheQuiz} 
               prestart={prestart}
+              arrSearchParams={arrOfFields}
             />
           )}
           {start === true && (
@@ -84,7 +87,8 @@ function App() {
           {finish === true && (
             <Finish 
               score={correctAnswers} 
-              countOfQuestions={questions.length} 
+              countOfQuestions={questions.length}
+              arrSearchParams={arrOfFields}
             />
           )}
       </div>

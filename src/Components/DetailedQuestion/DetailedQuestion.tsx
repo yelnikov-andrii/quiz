@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { MyButton } from '../MyButton/MyButton';
 import { Error } from '../Error/Error';
 import { QuestionInterface } from '../../types/types';
+import { Logo } from '../Logo/Logo';
 
 interface Props {
   question: QuestionInterface;
@@ -43,10 +44,7 @@ export const DetailedQuestion: React.FC <Props> = ({question, nextQuestion}) => 
   return (
     <React.Fragment>
       <>
-        <img 
-          src="https://involve-me.imgix.net/uploads/assets/93744c2c-4e46-439c-bf51-17ac52607418.png?q=55&dpr=1.25&w=600&fit=max" alt=''
-          className='App__logo'
-        />
+      <Logo />
       <main 
         className="question"
         data-aos="fade-down"

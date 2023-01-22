@@ -1,16 +1,21 @@
 import React from 'react';
 import classNames from 'classnames';
 import { MyButton } from '../MyButton/MyButton';
+import { Logo } from '../Logo/Logo';
 
-export const Start: React.FC <any> = ({startTheQuiz, prestart}) => {
+interface Props {
+  startTheQuiz: () => void;
+  prestart: boolean;
+  arrSearchParams: string[][];
+}
+
+export const Start: React.FC <Props> = ({startTheQuiz, prestart, arrSearchParams}) => {
+  const searchParams = '?' + arrSearchParams.map(el => el[0] + '=' + el[1]).join('&');
 
   return (
     <div>
-      <img 
-        src="https://involve-me.imgix.net/uploads/assets/93744c2c-4e46-439c-bf51-17ac52607418.png?q=55&dpr=1.25&w=600&fit=max" alt=''
-        className='App__logo'
-      />
-      <h2 className='App__header'>
+      <Logo />
+      <h2 className='start__header'>
         Make your choice!
       </h2>
       <MyButton 
@@ -21,12 +26,12 @@ export const Start: React.FC <any> = ({startTheQuiz, prestart}) => {
         click={startTheQuiz}
         error={false}
       />
-      <MyButton 
-        content="Buy at full price of $79.99" 
-        className="myButton myButton--scale"
-        error={false}
-        click={() => {}}
-      />
+      <a 
+        href={`/${searchParams}`}
+        className="myButton myButton--scale start__link"
+      >
+        Buy at full price of $79.99
+      </a>
     </div>
   );
 };

@@ -5,9 +5,12 @@ import { Counter } from '../Counter/Counter';
 interface Props {
   score: number;
   countOfQuestions: number;
+  arrSearchParams: string[][];
 }
 
-export const Finish: React.FC <Props> = ({score, countOfQuestions}) => {
+export const Finish: React.FC <Props> = ({score, countOfQuestions, arrSearchParams}) => {
+  const searchParams = '?' + arrSearchParams.map(el => el[0] + '=' + el[1]).join('&');
+  console.log(searchParams);
   return (
     <Container>
       <div className='finish'>
@@ -25,7 +28,7 @@ export const Finish: React.FC <Props> = ({score, countOfQuestions}) => {
       <h1 className='finish__h2'>
         Here is your link to the discounted product:
       </h1>
-      <a className='finish__link' href='/'>
+      <a className='finish__link' href={`/${searchParams}`}>
         Proceed to checkout
       </a>
       <h3 className='finish__h3'>

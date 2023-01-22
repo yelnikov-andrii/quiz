@@ -1,15 +1,25 @@
 .question {
   max-width: 516px;
-  display: block;
-  margin: o auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
 
   &__img {
-    margin: 0 0 40px 0;
+    margin: 0 auto 20px;
     width: 100%;
+    max-width: 384px;
   }
 
   &__txt {
     text-align: center;
+    font-weight: 700;
+    font-size: 24px;
+    margin: 0 0 20px 0;
+  }
+
+  &__body {
+    width: 100%;
   }
 
   &__wrapper {
@@ -38,24 +48,27 @@
     padding: 20px;
     right: 0;
     opacity: 0;
+    color: #909090;
+    font-size: 24px;
 
     &--opened {
       animation: name duration timing-function delay iteration-count direction fill-mode;
       animation-name: openInfo;
-      animation-duration: 1s;
+      animation-duration: 500ms;
       animation-timing-function: linear;
-      animation-delay: 200ms;
+      animation-delay: 100ms;
       animation-direction: normal;
       animation-fill-mode: forwards;
     }
   }
 
   &__infoTxt {
-    width: 60%;
+    width: 80%;
     margin-left: auto;
   }
 
   &__infoLabel {
+    color: #000;
     &--correct {
         position: absolute;
         left: 20px;
@@ -69,6 +82,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        color: #000;
     }
 
     &--false {

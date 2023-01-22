@@ -10,9 +10,13 @@ body {
 }
 
 .App {
-  padding: 50px 0;
+  padding: 40px 0;
   max-width: 800px;
   margin: 0 auto;
+
+  @media (max-width: 375px) {
+    padding: 10px 0;
+  }
 
   &__wrapper {
     max-width: 600px;
@@ -21,12 +25,14 @@ body {
   
   &__logo {
     width: 150px;
-    margin: 0 0 70px 0;
+    margin: 0 0 40px 0;
   }
 
   &__header {
     text-align: center;
     margin: 0 0 30px 0;
+    font-size: 28px;
+    font-weight: 700;
   }
 }
 

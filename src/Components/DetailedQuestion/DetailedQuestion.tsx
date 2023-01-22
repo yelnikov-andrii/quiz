@@ -56,7 +56,8 @@ export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
             content={variant}
             className={classNames("myButton myButton--answer myButton--detailedQuestion", {
               'myButton--correctAnswer': answered === true && variant === question.answer,
-              'myButton--falseAnswer': answered === true && variant !== question.answer,
+              'myButton--falseAnswer': answered === true && variant !== question.answer && variant === answer,
+              'myButton--correctAnswerWasDone': answered === true && variant !== question.answer
             })}
             key={variant}
             click={() => {

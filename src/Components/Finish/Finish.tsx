@@ -1,9 +1,11 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
 import { Counter } from '../Counter/Counter';
 
 export const Finish: React.FC <any> = ({score, countOfQuestions}) => {
   return (
-    <div className='finish'>
+    <Container>
+      <div className='finish'>
       <img
         src='https://involve-me.imgix.net/uploads/assets/940d50f9-a81c-4636-b0f8-67942ef3b922.jpeg?q=75&dpr=1&w=600&fit=max'
         alt=''
@@ -26,6 +28,7 @@ export const Finish: React.FC <any> = ({score, countOfQuestions}) => {
       </h3>
       <Counter />
     </div>
+    </Container>
   );
 };
 

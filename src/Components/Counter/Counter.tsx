@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import Countdown from 'react-countdown';
+import Countdown, { zeroPad } from 'react-countdown';
 import { ModalComponent } from '../Modal/Modal';
 
 export const Counter = () => {
@@ -7,12 +7,16 @@ export const Counter = () => {
     if (completed) {
       return <ModalComponent />;
     } else {
-      return <span>{minutes}:{seconds}</span>;
+      return <span>{minutes}:{zeroPad(seconds)}</span>;
     }
   };
   return (
     <div className='counter'>
-      <Countdown date={Date.now() + 1800000} renderer={renderer} />
+      <Countdown 
+        date={Date.now() + 1800000} 
+        renderer={renderer}
+
+      />
     </div>
   );
 };

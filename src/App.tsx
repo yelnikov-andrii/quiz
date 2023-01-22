@@ -22,11 +22,11 @@ function App() {
   }, []);
   
   React.useEffect(() => {
-    const foundQuestion = questions.find(question => question.id === currentNum);
-    setCurrentQuestion(foundQuestion)
+    const foundQuestion = questions.find((question, index) => index === currentNum - 1);
+    setCurrentQuestion(foundQuestion);
   }, [currentNum]);
 
-  const nextQuestion = (value: boolean) => {
+  const nextQuestion = React.useCallback((value: boolean) => {
     setCurrentNum(prev => prev + 1);
     if (value === true) {
       setCorrectAnswers(answers => answers + 1)
@@ -35,14 +35,13 @@ function App() {
     setTimeout(() => {
       setDelay(false);
     }, 0);
-  }
+  }, [currentNum])
 
   const startTheQuiz = () => {
     setStart(true);
   }
 
   React.useEffect(() => {
-    console.log(currentNum)
     if (currentNum === questions.length + 1) {
       setFinish(true);
     }

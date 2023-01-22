@@ -5,6 +5,10 @@
   align-items: center;
   margin: 0 auto;
 
+  @media (max-width: 375px) {
+    max-height: 100vh;
+  }
+
   &__img {
     margin: 0 auto 20px;
     width: 100%;

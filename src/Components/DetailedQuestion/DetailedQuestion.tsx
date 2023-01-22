@@ -5,7 +5,6 @@ import { MyButton } from '../MyButton/MyButton';
 export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
   const [answer, setAnswer] = React.useState<string>();
   const [answered, setAnswered] = React.useState(false);
-  const [delay, setDelay] = React.useState(false);
 
   const clearInfo = () => {
     setAnswer('');
@@ -23,16 +22,11 @@ export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
     if (answered === true) {
       nextQuestion();
       clearInfo();
-      // setDelay(true);
-      // setTimeout(() => {
-      //   setDelay(false)
-      // }, 1000);
       }
   }
 
   return (
     <React.Fragment>
-    {delay === false && (
       <>
         <img 
           src="https://involve-me.imgix.net/uploads/assets/93744c2c-4e46-439c-bf51-17ac52607418.png?q=55&dpr=1.25&w=600&fit=max" alt=''
@@ -99,7 +93,6 @@ export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
       </div>
     </main>
       </>
-    )}
     </React.Fragment>
   )
 };

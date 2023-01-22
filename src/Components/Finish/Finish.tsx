@@ -2,7 +2,12 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 import { Counter } from '../Counter/Counter';
 
-export const Finish: React.FC <any> = ({score, countOfQuestions}) => {
+interface Props {
+  score: number;
+  countOfQuestions: number;
+}
+
+export const Finish: React.FC <Props> = ({score, countOfQuestions}) => {
   return (
     <Container>
       <div className='finish'>

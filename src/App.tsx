@@ -5,13 +5,14 @@ import './App.scss';
 import { Start } from './Components/Start/Start';
 import { DetailedQuestion } from './Components/DetailedQuestion/DetailedQuestion';
 import { Question } from './Components/Question/Question';
-import { questions } from './questionData';
+import { questions } from './data/questionData';
 import { Finish } from './Components/Finish/Finish';
 import Aos from 'aos';
+import { QuestionInterface } from './types/types';
 
 function App() {
   const [currentNum, setCurrentNum] = React.useState(1);
-  const [currentQuestion, setCurrentQuestion] = React.useState<any>();
+  const [currentQuestion, setCurrentQuestion] = React.useState<QuestionInterface>();
   const [start, setStart] = React.useState(false);
   const [correctAnswers, setCorrectAnswers] = React.useState(0);
   const [finish, setFinish] = React.useState(false);
@@ -81,7 +82,10 @@ function App() {
           </>
           )}
           {finish === true && (
-            <Finish score={correctAnswers} countOfQuestions={questions.length} />
+            <Finish 
+              score={correctAnswers} 
+              countOfQuestions={questions.length} 
+            />
           )}
       </div>
         )}

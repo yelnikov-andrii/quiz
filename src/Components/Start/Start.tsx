@@ -19,10 +19,13 @@ export const Start: React.FC <any> = ({startTheQuiz, prestart}) => {
           'myButton--prestart': prestart === true,
         })}
         click={startTheQuiz}
+        error={false}
       />
       <MyButton 
         content="Buy at full price of $79.99" 
-        className="myButton myButton--scale" 
+        className="myButton myButton--scale"
+        error={false}
+        click={() => {}}
       />
     </div>
   );

@@ -2,8 +2,14 @@ import React from 'react';
 import classNames from 'classnames';
 import { MyButton } from '../MyButton/MyButton';
 import { Error } from '../Error/Error';
+import { QuestionInterface } from '../../types/types';
 
-export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
+interface Props {
+  question: QuestionInterface;
+  nextQuestion: (value: boolean) => void;
+}
+
+export const DetailedQuestion: React.FC <Props> = ({question, nextQuestion}) => {
   const [answer, setAnswer] = React.useState<string>();
   const [answered, setAnswered] = React.useState(false);
   const [error, setError] = React.useState(false);
@@ -60,7 +66,7 @@ export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
           </h2>
         )}
         <div className='detailedQuestion__buttons'>
-        {question.variants.map((variant: string) => (
+        {question.variants &&  question.variants.map((variant: string) => (
           <MyButton
             content={variant}
             className={classNames("myButton myButton--answer myButton--detailedQuestion", {
@@ -102,6 +108,7 @@ export const DetailedQuestion: React.FC <any> = ({question, nextQuestion}) => {
           content="Next"
           className="myButton myButton--scale myButton--next"
           click={goForward}
+          error={false}
          />
       </div>
     </main>

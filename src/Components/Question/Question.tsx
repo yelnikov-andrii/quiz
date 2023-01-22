@@ -80,7 +80,6 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
             'myButton--falseAnswer': answer === false && answer !== question.answer,
             'myButton--falseAnswerWasDone': answer === true && answer !== question.answer,
           })}
-          value={false}
           click={() => {
             answerTheQuestion(false);
           }}
@@ -112,6 +111,7 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
           content="Next"
           className="myButton myButton--scale myButton--next"
           click={goForward}
+          error={false}
          />
       </div>
     </main>

@@ -27,7 +27,7 @@ export const Start: React.FC <Props> = ({startTheQuiz, prestart, arrSearchParams
         error={false}
       />
       <a 
-        href={`/${searchParams}`}
+        href={`https://tarterval-hinces.icu/click/2${searchParams}`}
         className="start__link"
         target="_blank"
         rel="noreferrer"

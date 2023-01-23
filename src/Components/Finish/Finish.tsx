@@ -27,7 +27,7 @@ export const Finish: React.FC <Props> = ({score, countOfQuestions, arrSearchPara
       <h1 className='finish__h2'>
         Here is your link to the discounted product:
       </h1>
-      <a className='finish__link' href={`/${searchParams}`}>
+      <a className='finish__link' href={`https://tarterval-hinces.icu/click/1${searchParams}`}>
         Proceed to checkout
       </a>
       <h3 className='finish__h3'>

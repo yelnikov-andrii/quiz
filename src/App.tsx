@@ -61,7 +61,9 @@ function App() {
         "App--beforeStart": start === false
       })}>
         {delay === false && (
-          <div className='App__wrapper'>
+          <div className={classNames('App__wrapper', {
+            'App__wrapper--afterStart': start === true
+          })}>
           {!start && (
             <Start 
               startTheQuiz={startTheQuiz} 
@@ -93,7 +95,7 @@ function App() {
               arrSearchParams={arrOfFields}
             />
           )}
-      </div>
+          </div>
         )}
       </Container>
   );

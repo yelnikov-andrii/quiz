@@ -36,5 +36,14 @@ body {
   &__wrapper {
     max-width: 600px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &--afterStart {
+      @include onSmallScreen {
+        height: 100vh;
+      }
+    }
   }
 }

@@ -19,12 +19,16 @@ body {
   max-width: 800px;
   margin: 0 auto;
 
-  &--beforeStart {
-    padding: 170px 20px;
+  @include onSmallScreen {
+    padding: 0px 20px;
   }
 
-  @include onSmallScreen {
-    padding: 30px 20px;
+  &--beforeStart {
+    padding: 170px 20px;
+
+    @include onSmallScreen {
+      padding: 170px 20px;
+    }
   }
 
   &__wrapper {

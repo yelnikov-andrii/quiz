@@ -14,7 +14,7 @@ export const Logo: React.FC <Props> = ({className}) => {
          <img 
            src="https://involve-me.imgix.net/uploads/assets/93744c2c-4e46-439c-bf51-17ac52607418.png?q=55&dpr=1.25&w=600&fit=max" 
            alt="Flowers" 
-           style={{width: '100%'}}
+           className={className}
           />
       </picture>
   )

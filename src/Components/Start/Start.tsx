@@ -29,6 +29,8 @@ export const Start: React.FC <Props> = ({startTheQuiz, prestart, arrSearchParams
       <a 
         href={`/${searchParams}`}
         className="myButton myButton--scale start__link"
+        target="_blank"
+        rel="noreferrer"
       >
         Buy at full price of $79.99
       </a>

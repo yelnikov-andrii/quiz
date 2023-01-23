@@ -47,7 +47,7 @@ function App() {
     setPrestart(true);
     setTimeout(() => {
       setStart(true);
-    }, 1000);
+    }, 500);
   }
 
   React.useEffect(() => {

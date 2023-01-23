@@ -42,7 +42,8 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
       <main 
         className="question"
         data-aos="fade-down"
-        data-aos-duration="1000"
+        data-aos-duration="600"
+        data-aos-delay="400"
       >
       {question.img && (
         <div className='question__blockImg'>
@@ -50,6 +51,9 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
             src={question.img}
             className="question__img"
             alt=''
+            data-aos="fade-down"
+            data-aos-duration="600"
+            data-aos-delay="400"
           />
         </div>
       )}
@@ -59,7 +63,12 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
             {question.question}
           </h2>
         )}
-        <div className='question__buttons'>
+        <div 
+          className='question__buttons'
+          data-aos="fade-down"
+          data-aos-duration="600"
+          data-aos-delay="400"
+        >
         <MyButton 
           content="true" 
           className={classNames("myButton myButton--answer", {

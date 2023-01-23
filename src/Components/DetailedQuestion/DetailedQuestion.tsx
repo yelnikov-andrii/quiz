@@ -48,13 +48,17 @@ export const DetailedQuestion: React.FC <Props> = ({question, nextQuestion}) => 
       <main 
         className="question"
         data-aos="fade-down"
-        data-aos-duration="1000"
+        data-aos-duration="600"
+        data-aos-delay="400"
       >
       {question.img && (
         <img 
           src={question.img}
           className="question__img"
           alt=''
+          data-aos="fade-down"
+          data-aos-duration="600"
+          data-aos-delay="400"
         />
       )}
       <div className='question__body'>
@@ -63,14 +67,19 @@ export const DetailedQuestion: React.FC <Props> = ({question, nextQuestion}) => 
             {question.question}
           </h2>
         )}
-        <div className='detailedQuestion__buttons'>
+        <div 
+          className='detailedQuestion__buttons'
+          data-aos="fade-down"
+          data-aos-duration="600"
+          data-aos-delay="400"
+        >
         {question.variants &&  question.variants.map((variant: string) => (
           <MyButton
             content={variant}
             className={classNames("myButton myButton--answer myButton--detailedQuestion", {
               'myButton--correctAnswer': answered === true && variant === question.answer,
               'myButton--falseAnswer': answered === true && variant !== question.answer && variant === answer,
-              'myButton--correctAnswerWasDone': answered === true && answer !== variant
+              'myButton--correctAnswerWasDone': answered === true && answer !== variant && variant !== question.answer
             })}
             key={variant}
             click={() => {

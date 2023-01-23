@@ -10,7 +10,6 @@ interface Props {
 
 export const Finish: React.FC <Props> = ({score, countOfQuestions, arrSearchParams}) => {
   const searchParams = '?' + arrSearchParams.map(el => el[0] + '=' + el[1]).join('&');
-  console.log(searchParams);
   return (
     <Container>
       <div className='finish'>

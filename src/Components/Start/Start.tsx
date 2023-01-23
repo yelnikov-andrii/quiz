@@ -14,7 +14,7 @@ export const Start: React.FC <Props> = ({startTheQuiz, prestart, arrSearchParams
 
   return (
     <div>
-      <Logo />
+      <Logo className="logo" />
       <h2 className='start__header'>
         Make your choice!
       </h2>
@@ -28,7 +28,7 @@ export const Start: React.FC <Props> = ({startTheQuiz, prestart, arrSearchParams
       />
       <a 
         href={`/${searchParams}`}
-        className="myButton myButton--scale start__link"
+        className="start__link"
         target="_blank"
         rel="noreferrer"
       >

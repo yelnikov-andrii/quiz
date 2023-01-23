@@ -9,6 +9,7 @@ import { questions } from './data/questionData';
 import { Finish } from './Components/Finish/Finish';
 import Aos from 'aos';
 import { QuestionInterface } from './types/types';
+import classNames from 'classnames';
 
 function App() {
   const [currentNum, setCurrentNum] = React.useState(1);
@@ -56,8 +57,9 @@ function App() {
   }, [currentNum]);
 
   return (
-    <Container>
-      <div className="App">
+      <Container className={classNames("App", {
+        "App--beforeStart": start === false
+      })}>
         {delay === false && (
           <div className='App__wrapper'>
           {!start && (
@@ -93,8 +95,7 @@ function App() {
           )}
       </div>
         )}
-      </div>
-    </Container>
+      </Container>
   );
 }
 

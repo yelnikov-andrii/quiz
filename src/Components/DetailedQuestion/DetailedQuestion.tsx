@@ -44,7 +44,7 @@ export const DetailedQuestion: React.FC <Props> = ({question, nextQuestion}) => 
   return (
     <React.Fragment>
       <>
-      <Logo />
+      <Logo className='logo logo__question'/>
       <main 
         className="question"
         data-aos="fade-down"

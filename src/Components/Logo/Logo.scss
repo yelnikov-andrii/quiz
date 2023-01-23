@@ -1,4 +1,17 @@
+@import '../../mixin.scss';
+
 .logo {
   width: 150px;
   margin: 0 0 40px 0;
+
+  &__question {
+    @include onSmallScreen {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  @include onSmallScreen {
+    width: 70px;
+    height: 17px;
+  }
 }

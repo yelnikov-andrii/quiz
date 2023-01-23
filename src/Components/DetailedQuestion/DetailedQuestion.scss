@@ -1,7 +1,4 @@
 .detailedQuestion {
-  @media (max-width: 375px) {
-    max-height: 100vh;
-  }
   &__buttons {
     display: flex;
     flex-direction: column;

@@ -38,18 +38,20 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
   return (
     <React.Fragment>
       <>
-      <Logo />
+      <Logo className='logo logo__question'/>
       <main 
         className="question"
         data-aos="fade-down"
         data-aos-duration="1000"
       >
       {question.img && (
-        <img 
-          src={question.img}
-          className="question__img"
-          alt=''
-        />
+        <div className='question__blockImg'>
+          <img 
+            src={question.img}
+            className="question__img"
+            alt=''
+          />
+        </div>
       )}
       <div className='question__body'>
         {question.question && (
@@ -57,6 +59,7 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
             {question.question}
           </h2>
         )}
+        <div className='question__buttons'>
         <MyButton 
           content="true" 
           className={classNames("myButton myButton--answer", {
@@ -83,6 +86,7 @@ export const Question: React.FC <any> = ({question, nextQuestion}) => {
           }}
           error={error}
         />
+        </div>
         {question.info && answered && (
           <div className={classNames('question__wrapper', {
             'question__wrapper--opened': answered === true,

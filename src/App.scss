@@ -42,7 +42,7 @@ body {
 
     &--afterStart {
       @include onSmallScreen {
-        height: 100vh;
+        height: 90vh;
       }
     }
   }

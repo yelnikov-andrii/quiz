@@ -59,7 +59,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path='/' element={      <Container className={classNames("App", {
+      <Route path='/quiz' element={      <Container className={classNames("App", {
         "App--beforeStart": start === false
       })}>
         {delay === false && (

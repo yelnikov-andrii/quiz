@@ -10,6 +10,7 @@ import { Finish } from './Components/Finish/Finish';
 import Aos from 'aos';
 import { QuestionInterface } from './types/types';
 import classNames from 'classnames';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [currentNum, setCurrentNum] = React.useState(1);
@@ -57,7 +58,8 @@ function App() {
   }, [currentNum]);
 
   return (
-      <Container className={classNames("App", {
+    <Routes>
+      <Route path='/' element={      <Container className={classNames("App", {
         "App--beforeStart": start === false
       })}>
         {delay === false && (
@@ -97,7 +99,9 @@ function App() {
           )}
           </div>
         )}
-      </Container>
+    </Container>}>
+      </Route>
+    </Routes>
   );
 }
 
